@@ -4,7 +4,7 @@ This is the simplest Docker image that uses Web Author
 
 To build the Docker image, use:
 ```sh
-docker build -t web-author .
+docker build -t web-author-base .
 ```
 If behind a proxy, make sure you configure Docker https://docs.docker.com/network/proxy/
 
@@ -15,7 +15,7 @@ docker volume create web-author-data
 
 Then, start it with this command:
 ```sh
-docker run -p 8080:8080 --mount source=web-author-data,target=/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author web-author
+docker run -p 8080:8080 --mount source=web-author-data,target=/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author web-author-base
 ```
 
 Oxygen XML Web Author will be available at the following address: `http://<docker-host>:8080/oxygen-xml-web-author/`.

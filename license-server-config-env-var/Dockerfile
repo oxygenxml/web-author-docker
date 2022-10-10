@@ -1,4 +1,4 @@
-FROM web-author
+FROM web-author-base
 
 
 COPY start-web-author.sh /usr/local/tomcat/bin/
