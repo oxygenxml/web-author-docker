@@ -11,7 +11,7 @@ build_example () {
 	then
 		BUILD_ARGS="${BUILD_ARGS} --build-arg http_proxy=$http_proxy"
 	fi	
-	docker build $EXAMPLE -t web-author-$EXAMPLE $BUILD_ARGS
+	docker build $EXAMPLE --no-cache -t web-author-$EXAMPLE $BUILD_ARGS
 }	
 
 set -x
