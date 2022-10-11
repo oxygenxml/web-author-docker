@@ -19,3 +19,22 @@ docker run -p 8080:8080 --mount source=web-author-data,target=/usr/local/tomcat/
 ```
 
 Oxygen XML Web Author will be available at the following address: `http://<docker-host>:8080/oxygen-xml-web-author/`.
+
+Upgrading Web Author
+====================
+
+When upgrading Web Author you need to delete some data from the old version run:
+
+```
+docker run -it -v web-author-data:/data/ ubuntu rm -rf \
+  /data/frameworks/ \
+  /data/plugins/ \
+  /data/options/autocorrect/ \
+  /data/dicts/ \
+  /data/git-repos-location
+```
+
+Setting JVM arguments
+=====================
+
+You can use the `CATALINA_OPTS` environment variable to set environment variables used by Web Author. It is recommended to explicitly set the `-Xmx` argument to the amount of memory allocated to Web Author.
