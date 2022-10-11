@@ -1,7 +1,7 @@
 #!/bin/bash
 
 build_example () {
-	EXAMPLE=$1
+	EXAMPLE_NAME=$1
 	BUILD_ARGS=""
 	if [[ ! -z $https_proxy ]]
 	then
@@ -11,7 +11,7 @@ build_example () {
 	then
 		BUILD_ARGS="${BUILD_ARGS} --build-arg http_proxy=$http_proxy"
 	fi	
-	docker build $EXAMPLE --no-cache -t web-author-$EXAMPLE $BUILD_ARGS
+	docker build $EXAMPLE_NAME --no-cache -t web-author-$EXAMPLE $BUILD_ARGS
 }	
 
 set -x
