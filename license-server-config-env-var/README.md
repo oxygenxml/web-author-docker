@@ -13,7 +13,7 @@ Under the hood, this image installs a custom entry point that generats the confi
 
 ## Building the image
 
-Before building the current image, make sure to have the one in the `base/` folder built with the tag `web-author`.
+Before building the current image, make sure to have the one in the `base/` folder built with the tag `web-author-base`.
 
 To build the image from this folder run:
 
