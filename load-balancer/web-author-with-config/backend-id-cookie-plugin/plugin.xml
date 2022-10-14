@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The plugin.dtd file is located in the OXYGEN_INSATALL_DIR/plugins directory -->
+<!DOCTYPE plugin SYSTEM "../plugin.dtd">
+
+<plugin
+    class="ro.sync.exml.plugin.Plugin"
+    id="backend-id"
+    name="Backend ID Plugin"
+    description="A plugin to generate a cookie with the backed ID"
+    version="1.0"
+    vendor="Syncro Soft">
+
+  <runtime>
+    <library name="target/classes" />
+  </runtime>
+  <extension type="WebappServletFilter" class="com.oxygenxml.backend_id.CookieSetter"/>
+</plugin>

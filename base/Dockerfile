@@ -6,5 +6,3 @@ RUN wget https://www.oxygenxml.com/InstData/WebAuthor/war/oxygenxml-web-author.w
   unzip webapps/oxygenxml-web-author.war -d webapps/oxygen-xml-web-author && \
   rm webapps/oxygenxml-web-author.war
 
-# Create a volume for the Web Author Data Directory 
-VOLUME /usr/local/tomcat/work/Catalina/localhost/oxygenxml-web-author
