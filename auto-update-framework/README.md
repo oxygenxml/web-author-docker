@@ -8,6 +8,8 @@ Every two minutes, it pulls a new version of the framework files. If only CSS or
 How to use it
 -------------
 
+This image extends the `web-author-base` image, so make sure to build it by following the instructions in the `base/` folder.
+
 1. Set the environment variable `GIT_REPOSITORY_URL` to the URL of the repository that contains your frameworks in a `frameworks/` folder. If the repository is not public, you can include the username and access token in the URL like this: `https://user:token@github.com/...`
 2. Run the docker container with `--restart=always`
 
