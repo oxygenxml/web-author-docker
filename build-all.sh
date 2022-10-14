@@ -17,4 +17,4 @@ build_example () {
 set -x
 build_example base
 build_example license-server-config-env-var
-
+build_example auto-update-framework
