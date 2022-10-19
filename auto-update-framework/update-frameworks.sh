@@ -8,6 +8,13 @@ if [ ! -d "$LOCAL_CLONE/.git" ]; then
 fi
 
 cd $LOCAL_CLONE && git pull > git.log
+ret=$?
+if [ $ret -ne 0 ]; then
+  # Maybe there was a force push. Just restart the server to clone the repos from scratch.
+  rm -rf /app/git/
+  /usr/local/tomcat/bin/shutdown.sh
+fi
+
 FRAMEWORKS=/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author/frameworks
 mkdir -p $FRAMEWORKS
 cp -a $LOCAL_CLONE/frameworks/* $FRAMEWORKS 
