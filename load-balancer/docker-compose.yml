@@ -11,14 +11,14 @@ services:
   web-author-1:
     build: web-author-with-config
     volumes:
-     - ./license.properties:/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author/license.properties
+     - ./license.properties:/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author/options/license.properties
     environment:
      - BACKEND_ID=wa1
      - ADMIN_PAGE_IS_DISABLED=true
   web-author-2:
     build: web-author-with-config
     volumes:
-     - ./license.properties:/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author/license.properties
+     - ./license.properties:/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author/options/license.properties
     environment:
      - BACKEND_ID=wa2
      - ADMIN_PAGE_IS_DISABLED=true
