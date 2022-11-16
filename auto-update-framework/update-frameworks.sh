@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "Checking for change $(date)"
 
+# Required to restart the Tomcat server
+export JAVA_HOME=/opt/java/openjdk
+
 export LOCAL_CLONE=/app/git
 mkdir -p $LOCAL_CLONE
 if [ ! -d "$LOCAL_CLONE/.git" ]; then 
