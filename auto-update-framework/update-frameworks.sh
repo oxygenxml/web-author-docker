@@ -14,7 +14,7 @@ cd $LOCAL_CLONE && git pull > git.log
 ret=$?
 if [ $ret -ne 0 ]; then
   # Maybe there was a force push. Just restart the server to clone the repos from scratch.
-  rm -rf /app/git/
+  ls -A1 . | xargs rm -rf
   /usr/local/tomcat/bin/shutdown.sh
 fi
 
