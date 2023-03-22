@@ -6,7 +6,7 @@ The 'base/' folder contains the simplest version of a Dockerile. Other folders c
 
 Copyright and License
 ---------------------
-Copyright 2022 Syncro Soft, SRL.
+Copyright 2023 Syncro Soft, SRL.
 
 This project is licensed under [Apache License 2.0](https://github.com/oxygenxml/web-author-docker/tree/master/LICENSE)
 
