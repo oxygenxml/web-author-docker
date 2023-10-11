@@ -18,7 +18,7 @@ if [ $ret -ne 0 ]; then
   /usr/local/tomcat/bin/shutdown.sh
 fi
 
-FRAMEWORKS=/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author/frameworks
+FRAMEWORKS=/usr/local/tomcat/work/Catalina/localhost/oxygen-xml-web-author/user-frameworks
 mkdir -p $FRAMEWORKS
 cp -a $LOCAL_CLONE/frameworks/* $FRAMEWORKS 
 
