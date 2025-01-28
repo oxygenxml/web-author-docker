@@ -8,7 +8,7 @@ RUN unzip /tmp/oxygenxml-web-author-all-platforms.zip -d /opt/
 
 WORKDIR /opt/oxygen-xml-web-author/
 RUN rm tomcat/webapps/license-servlet -rf && \
-    rm tomcat/webapps/ROOT -rf && \
+    rm tomcat/webapps/ROOT/config -rf && \
     rm tomcat/work/Catalina/localhost/oxygen-xml-web-author/license-servlet -rf && \ 
     # Delete license.properties such that users will be prompted to configure them
     rm -rf tomcat/webapps/oxygen-xml-web-author/WEB-INF/license.properties && \
