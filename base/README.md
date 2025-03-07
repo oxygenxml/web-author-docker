@@ -20,6 +20,10 @@ docker run -p 8080:8080 --mount source=web-author-data,target=/usr/local/tomcat/
 
 Oxygen XML Web Author will be available at the following address: `http://<docker-host>:8080/oxygen-xml-web-author/`.
 
+When you run the Docker image for the first time, you’ll need to:
+1. Configure an administrator account by choosing a username and password. (in the logs there is also an initial password)
+2. Configure your license server.
+
 Upgrading Web Author
 ====================
 
