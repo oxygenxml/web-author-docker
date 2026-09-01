@@ -25,5 +25,7 @@ fi
 
 # Give all .sh files execution permissions.
 chmod a+x $INSTALL_DIR/tomcat/bin/*.sh
-$INSTALL_DIR/tomcat/bin/catalina.sh run
+
+# Run the command: the default one from the base image, or the one a derived image set as CMD.
+exec "$@"
 

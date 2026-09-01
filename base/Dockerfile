@@ -33,5 +33,7 @@ ENV JDK_JAVA_OPTIONS="--add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=ja
 ENV CATALINA_HOME="/usr/local/tomcat"
 ENV CATALINA_BASE="/usr/local/tomcat"
 
-CMD ["/entrypoint.sh"]
-ENTRYPOINT ["sh", "-c"]
+# The setup in entrypoint.sh must run for every image built on this one, so it belongs in
+# ENTRYPOINT: a derived image that declares its own CMD replaces the command, not the entry point.
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
