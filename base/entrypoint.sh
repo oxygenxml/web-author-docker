@@ -3,7 +3,6 @@ INSTALL_DIR="/usr/local"
 
 export CATALINA_OPTS="${CATALINA_OPTS:-} -Doxygen.data.dir=$INSTALL_DIR/tomcat/work/Catalina/localhost/oxygen-xml-web-author"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.oxygenxml.webapp.product=true"
-export CATALINA_OPTS="$CATALINA_OPTS -Djava.security.manager"
 export CATALINA_OPTS="$CATALINA_OPTS -Djava.security.policy=\"$INSTALL_DIR/tomcat/conf/catalina.policy\""
 export CATALINA_OPTS="$CATALINA_OPTS -Doxygen.ssl.trusted.keystore=\"$INSTALL_DIR/tomcat/conf/web-author.keystore\""
 
@@ -26,5 +25,7 @@ fi
 
 # Give all .sh files execution permissions.
 chmod a+x $INSTALL_DIR/tomcat/bin/*.sh
-$INSTALL_DIR/tomcat/bin/catalina.sh run
+
+# Run the command: the default one from the base image, or the one a derived image set as CMD.
+exec "$@"
 
