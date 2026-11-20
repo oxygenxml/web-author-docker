@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17 AS builder
+FROM eclipse-temurin:21 AS builder
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends unzip
@@ -18,7 +18,7 @@ RUN rm tomcat/webapps/license-servlet -rf && \
     rm oXygenXmlWebAuthor.vmoptions ./*.bat ./*.sh
 
 
-FROM eclipse-temurin:17
+FROM eclipse-temurin:21
 COPY --from=builder /opt/oxygen-xml-web-author/ /usr/local/
 
 WORKDIR /usr/local/tomcat/

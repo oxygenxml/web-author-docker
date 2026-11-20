@@ -5,6 +5,9 @@ export CATALINA_OPTS="${CATALINA_OPTS:-} -Doxygen.data.dir=$INSTALL_DIR/tomcat/w
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.oxygenxml.webapp.product=true"
 export CATALINA_OPTS="$CATALINA_OPTS -Djava.security.policy=\"$INSTALL_DIR/tomcat/conf/catalina.policy\""
 export CATALINA_OPTS="$CATALINA_OPTS -Doxygen.ssl.trusted.keystore=\"$INSTALL_DIR/tomcat/conf/web-author.keystore\""
+# CVE-2026-114938 ("Java4Shell"): the Java of the base image may not have the fix yet. Turning off
+# the vulnerable Base64 decoder is harmless once it does.
+export CATALINA_OPTS="$CATALINA_OPTS -XX:-UseBASE64Intrinsics"
 
 # Generate the keystore
 KEYSTORE_FILE="$INSTALL_DIR/tomcat/conf/web-author.keystore"
